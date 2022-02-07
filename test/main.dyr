@@ -1,3 +1,3 @@
-export fn square(number: i32): i32 {
-    ret number * number
+export func square(number: i32): i32 {
+    ret number * number;
 }

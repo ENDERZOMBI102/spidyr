@@ -1,7 +1,8 @@
 const symbols = "(){}[]+-=*/!:|";
+
 export type Token = {
-    type: "name"|"number"|"symbol";
-    value: string|number
+    type: "name"|"number"|"symbol"|"newline";
+    value?: string|number
 };
 
 export function tokenize(input: string[]): Token[] {
@@ -19,6 +20,10 @@ export function tokenize(input: string[]): Token[] {
                 type: "symbol",
                 value: val
             };
+        } else if (val == ";") {
+            token = {
+                type: "newline"
+            }
         } else {
             token = {
                 type: "name",

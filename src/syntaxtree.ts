@@ -1,3 +1,4 @@
+//@ts-ignore: deno lang server not working on vsc
 import { Token } from "./tokenizer.ts";
 
 export type SyntaxTree = (Token|SyntaxTree)[];
@@ -28,9 +29,9 @@ function toSyntaxTreeInternal(tokens: Token[]): SyntaxTree {
                 break;
             case "number":
                 break;
-            case "symbol":
-                break;
             case "type":
+                break;
+            default:
                 break;
         }
     }

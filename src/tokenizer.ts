@@ -1,5 +1,8 @@
 const symbols = "(){}[]+-=*/!:|";
-
+export type Symbol = "p_open"|"p_close"|"b_open"|"b_close"|"s_open"|"s_close"|"plus"|"minus"|"mult"|"div"|"not"|"colon"|"or"
+const symbolTypes: Symbol[] = [
+    "p_open", "p_close", "b_open", "b_close", "s_open", "s_close", "plus", "minus", "mult", "div", "not", "colon", "or"
+]
 export const declare = [
     "func", "var"
 ];
@@ -18,7 +21,7 @@ export const types = [
     "i32", "i64", "f32", "f64"
 ]
 export type Token = {
-    type: "name"|"number"|"symbol"|"declare"|"newline"|"type"|"logic"|"access"|"end";
+    type: "name"|"number"|"declare"|"newline"|"type"|"logic"|"access"|"end"|Symbol;
     value?: string|number
 };
 
@@ -34,8 +37,7 @@ export function tokenize(input: string[]): Token[] {
             };
         } else if (symbols.indexOf(val) != -1) {
             token = {
-                type: "symbol",
-                value: val
+                type: symbolTypes[symbols.indexOf(val)]
             };
         } else if (val == ";") {
             token = {

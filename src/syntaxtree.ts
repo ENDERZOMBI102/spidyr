@@ -12,11 +12,13 @@ export function toSyntaxTree(tokens: Token[]): SyntaxTree {
 function toSyntaxTreeInternal(tokens: Token[]): SyntaxTree {
     const tree: SyntaxTree = [];
     for (; i < tokens.length; i++) {
-        let token = tokens[i];
+        const token = tokens[i];
         switch (token.type) {
             case "access":
                 break;
             case "declare":
+                break;
+            case "end":
                 break;
             case "logic":
                 break;

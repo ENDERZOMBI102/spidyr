@@ -1,7 +1,7 @@
 const symbols = "(){}[]+-=*/!:|";
-export type Symbol = "p_open"|"p_close"|"b_open"|"b_close"|"s_open"|"s_close"|"plus"|"minus"|"mult"|"div"|"not"|"colon"|"or"
+export type Symbol = "p_open"|"p_close"|"b_open"|"b_close"|"s_open"|"s_close"|"plus"|"minus"|"equal"|"mult"|"div"|"not"|"colon"|"or"
 const symbolTypes: Symbol[] = [
-    "p_open", "p_close", "b_open", "b_close", "s_open", "s_close", "plus", "minus", "mult", "div", "not", "colon", "or"
+    "p_open", "p_close", "b_open", "b_close", "s_open", "s_close", "plus", "minus", "equal", "mult", "div", "not", "colon", "or"
 ]
 export const declare = [
     "func", "var"

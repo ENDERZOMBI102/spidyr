@@ -1,20 +1,24 @@
 const symbols = "(){}[]+-=*/!:|";
 
 export const declare = [
-    "func", "ret", "var"
+    "func", "var"
 ];
+
+export const end = [
+    "ret", "break", "continue"
+]
 
 export const access = [
     "export", "import"
 ]
 export const logic = [
-    "if", "else",
+    "if", "else", "for", "while"
 ]
 export const types = [
     "i32", "i64", "f32", "f64"
 ]
 export type Token = {
-    type: "name"|"number"|"symbol"|"declare"|"newline"|"type"|"logic"|"access";
+    type: "name"|"number"|"symbol"|"declare"|"newline"|"type"|"logic"|"access"|"end";
     value?: string|number
 };
 
@@ -55,6 +59,11 @@ export function tokenize(input: string[]): Token[] {
         } else if (access.indexOf(val) != -1) {
             token = {
                 type: "access",
+                value: val
+            };
+        } else if (end.indexOf(val) != -1) {
+            token = {
+                type: "end",
                 value: val
             };
         } else {

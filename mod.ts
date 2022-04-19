@@ -1,6 +1,6 @@
-import * as stringParser from "./src/stringparser.ts";
-import * as tokenizer from "./src/tokenizer.ts";
-import * as syntaxTree from "./src/syntaxtree.ts";
+import * as stringParser from "./stringparser.ts";
+import * as tokenizer from "./tokenizer.ts";
+import * as syntaxTree from "./syntaxtree.ts";
 
 const source = await (Deno.readTextFile("./test/main.dyr"));
 console.log(source + "\n\n");

@@ -1,8 +1,5 @@
 namespace test.test2;
 
-import test.Test;
-import test2.Test2;
-
 export Main imp Test {
     export func main(args: str[]): i32 {
         if (1 == 1) {

@@ -1,39 +1,38 @@
-//@ts-ignore: deno lang server not working on vsc
 import { Token } from "./tokenizer.ts";
 
-export type SyntaxTree = (Token|SyntaxTree)[];
+export type Class = {
+    namespace: string;
+    imports?: string[];
+
+    functions: Function[]
+}
+export type Function = {
+    name: string;
+    args?: {
+        name: string,
+        type: string
+    }
+    ret?: string
+}
 
 let i: number;
 
-export function toSyntaxTree(tokens: Token[]): SyntaxTree {
+export function toSyntaxTree(tokens: Token[]) {
     i = 0;
-    return toSyntaxTreeInternal(tokens);
+    parseRoot(tokens)
 }
 
-function toSyntaxTreeInternal(tokens: Token[]): SyntaxTree {
-    const tree: SyntaxTree = [];
+function parseRoot(tokens: Token[]) {
+    var namespace = ""
+    if (tokens[i++].value == "namespace") namespace = parsePath(tokens);
+    console.log(namespace)
+}
+function parsePath(tokens: Token[]): string {
+    let out = "";
     for (; i < tokens.length; i++) {
-        const token = tokens[i];
-        switch (token.type) {
-            case "access":
-                break;
-            case "declare":
-                break;
-            case "end":
-                break;
-            case "logic":
-                break;
-            case "name":
-                break;
-            case "newline":
-                break;
-            case "number":
-                break;
-            case "type":
-                break;
-            default:
-                break;
-        }
+        if (tokens[i].type == "name") out += tokens[i].value;
+        else if (tokens[i].type == "dot") out += "/";
+        else return out;
     }
-    return tree;
+    return out;
 }

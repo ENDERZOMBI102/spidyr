@@ -1,3 +1,12 @@
-export func square(number: i32): i32 {
-    ret number * number;
+namespace test.test2;
+
+import test.Test;
+
+export class Main {
+    export func main(args: str[]): i32 {
+        if (1 == 1) {
+            ret 1;
+        }
+        ret 2;
+    }
 }

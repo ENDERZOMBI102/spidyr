@@ -1,10 +1,10 @@
-const symbols = "(){}[]+-=*/!:|";
-export type Symbol = "p_open"|"p_close"|"b_open"|"b_close"|"s_open"|"s_close"|"plus"|"minus"|"equal"|"mult"|"div"|"not"|"colon"|"or"
+const symbols = "(){}[]+-=*/!:|.";
+export type Symbol = "p_open"|"p_close"|"b_open"|"b_close"|"s_open"|"s_close"|"plus"|"minus"|"equal"|"mult"|"div"|"not"|"colon"|"or"|"dot"
 const symbolTypes: Symbol[] = [
-    "p_open", "p_close", "b_open", "b_close", "s_open", "s_close", "plus", "minus", "equal", "mult", "div", "not", "colon", "or"
+    "p_open", "p_close", "b_open", "b_close", "s_open", "s_close", "plus", "minus", "equal", "mult", "div", "not", "colon", "or", "dot"
 ]
 export const declare = [
-    "func", "var"
+    "func", "var", "class"
 ];
 
 export const end = [
@@ -12,13 +12,13 @@ export const end = [
 ]
 
 export const access = [
-    "export", "import"
+    "export", "import", "namespace"
 ]
 export const logic = [
     "if", "else", "for", "while"
 ]
 export const types = [
-    "i32", "i64", "f32", "f64"
+    "i32", "i64", "f32", "f64", "i8", "f8", "str", "v"
 ]
 export type Token = {
     type: "name"|"number"|"declare"|"newline"|"type"|"logic"|"access"|"end"|Symbol;

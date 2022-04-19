@@ -1,4 +1,4 @@
-const symbols = "(){}[]+-=*/!:|;";
+const symbols = "(){}[]+-=*/!:|;.";
 const letters = /[a-z]/i;
 const numbers = /[1-9]/;
 export function parseString(input: string): string[] {

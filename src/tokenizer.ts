@@ -1,10 +1,10 @@
-const symbols = "(){}[]+-=*/!:|.";
-export type Symbol = "p_open"|"p_close"|"b_open"|"b_close"|"s_open"|"s_close"|"plus"|"minus"|"equal"|"mult"|"div"|"not"|"colon"|"or"|"dot"
+const symbols = "(){}[]+-=*/!:|.,";
+export type Symbol = "p_open"|"p_close"|"b_open"|"b_close"|"s_open"|"s_close"|"plus"|"minus"|"equal"|"mult"|"div"|"not"|"colon"|"or"|"dot"|"comma"
 const symbolTypes: Symbol[] = [
-    "p_open", "p_close", "b_open", "b_close", "s_open", "s_close", "plus", "minus", "equal", "mult", "div", "not", "colon", "or", "dot"
+    "p_open", "p_close", "b_open", "b_close", "s_open", "s_close", "plus", "minus", "equal", "mult", "div", "not", "colon", "or", "dot", "comma"
 ]
 export const declare = [
-    "func", "var", "class"
+    "func", "var", "imp", "ext"
 ];
 
 export const end = [

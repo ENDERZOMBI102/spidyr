@@ -11,3 +11,5 @@ const tokens = tokenizer.tokenize(parsed);
 console.log(tokens);
 console.log("\n");
 const syntaxtree = syntaxTree.toSyntaxTree(tokens);
+console.log(syntaxtree);
+console.log("\n");

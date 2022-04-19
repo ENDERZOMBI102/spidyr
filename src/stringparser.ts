@@ -1,6 +1,7 @@
 const symbols = "(){}[]+-=*/!:|;.";
 const letters = /[a-z]/i;
-const numbers = /[1-9]/;
+const letters2 = /[a-z0-9]/i;
+const numbers = /[0-9]/;
 export function parseString(input: string): string[] {
     const output: string[] = [];
     let str = "";
@@ -24,10 +25,6 @@ export function parseString(input: string): string[] {
         }
         if (numbers.test(char)) {
             str += char;
-            if (input[i+1] == ".") {
-                i++;
-                str += ".";
-            }
         }
     }
     return output;

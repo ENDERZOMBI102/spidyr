@@ -17,7 +17,7 @@ object Tokenizer {
             val symbol = Symbol.getNameFromValue(str)
             if (str.toFloatOrNull() != null)
                 out.add(Token(
-                    "number",
+                    "NUMBER",
                     str
                 ))
             else if (symbol != null)
@@ -26,35 +26,35 @@ object Tokenizer {
                 ))
             else if (str == ";")
                 out.add(Token(
-                    "newline"
+                    "NEWLINE"
                 ))
             else if (declare.indexOf(str) != -1)
                 out.add(Token(
-                    "declare",
+                    "DECLARE",
                     str
                 ))
             else if (defaultTypes.indexOf(str) != -1)
                 out.add(Token(
-                    "type",
+                    "BUILTIN",
                     str
                 ))
             else if (logic.indexOf(str) != -1)
                 out.add(Token(
-                    "logic",
+                    "LOGIC",
                     str
                 ))
             else if (access.indexOf(str) != -1)
                 out.add(Token(
-                    "access",
+                    "ACCESS",
                     str
                 ))
             else if (end.indexOf(str) != -1)
                 out.add(Token(
-                    "end",
+                    "END",
                     str
                 ))
             else out.add(Token(
-                "name",
+                "NAME",
                 str
             ))
         }

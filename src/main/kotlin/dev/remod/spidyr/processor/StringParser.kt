@@ -11,8 +11,8 @@ object StringParser {
     fun parse(input: String): Array<String> {
         val out = ArrayList<String>()
         var str = ""
-        for (i in 0..input.length) {
-            val char = input[i].toString()
+        for (element in input) {
+            val char = element.toString()
             if (symbols.indexOf(char) != -1) {
                 if (str.isNotEmpty())
                     out.add(str)

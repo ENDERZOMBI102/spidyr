@@ -4,8 +4,8 @@ import dev.remod.spidyr.types.Symbol
 import dev.remod.spidyr.types.Token
 
 object Tokenizer {
-    val access = arrayOf("import","pub","ns")
-    val declare = arrayOf("func", "var", "imp", "ext")
+    val access = arrayOf("in","pub","pkg")
+    val declare = arrayOf("imp", "ext")
     val end = arrayOf("ret","brk","cont")
     val logic = arrayOf("if","else","while","for")
     val defaultTypes = arrayOf("int", "lng", "byt", "str", "flt", "dbl", "bl", "srt")

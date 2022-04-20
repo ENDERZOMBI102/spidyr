@@ -1,5 +1,6 @@
 package dev.remod.spidyr
 
+import dev.remod.spidyr.processor.AstGenerator
 import dev.remod.spidyr.processor.StringParser
 import dev.remod.spidyr.processor.Tokenizer
 import java.io.File
@@ -19,4 +20,5 @@ fun main() {
         println(it)
     }
     println()
+    val ast = AstGenerator.generateAst(tokens)
 }

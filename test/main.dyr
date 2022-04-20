@@ -1,7 +1,7 @@
 namespace test.test2;
 
 export Main imp Test {
-    export func main(args: str[]): i32 {
+    export func main(args: str[]): int {
         if (1 == 1) {
             ret 1;
         }

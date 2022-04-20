@@ -1,4 +1,4 @@
-package dev.remod.spidyr
+package dev.remod.spidyr.processor
 
 import dev.remod.spidyr.exceptions.InvalidNameException
 

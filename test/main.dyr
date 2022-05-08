@@ -1,8 +1,8 @@
-pkg test.test2;
+ns test.test2;
 
-pub Main {
-    pub test: int = 1
-    pub main(args: str[]): int {
+Main {
+    test = 1 : Long;
+    main(args : Array<String>) {
         if (1 == test) {
             ret 1;
         }

@@ -3,7 +3,7 @@ package dev.remod.spidyr.processor
 import dev.remod.spidyr.exceptions.InvalidNameException
 
 object StringParser {
-    val symbols = "(){}[]+-=*/!:|;."
+    val symbols = "(){}[]<>+-=*/!:|;."
     val whitespace = Regex("\\s")
     val letters = Regex("[a-zA-Z]")
     val numbers = Regex("[0-9]")

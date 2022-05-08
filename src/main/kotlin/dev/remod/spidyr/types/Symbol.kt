@@ -7,6 +7,8 @@ enum class Symbol(val value: String) {
     B_CLOSE("}"),
     S_OPEN("["),
     S_CLOSE("]"),
+    T_OPEN("<"),
+    T_CLOSE(">"),
     PLUS("+"),
     MINUS("-"),
     EQUAL("="),

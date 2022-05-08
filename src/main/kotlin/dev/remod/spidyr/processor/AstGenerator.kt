@@ -8,7 +8,7 @@ object AstGenerator {
     var i = 0
     fun generateAst(tokens: Array<Token>): AstRoot {
         var pkg = ""
-        if (tokens[i].value == "pkg") {
+        if (tokens[i].value == "ns") {
             i++
             pkg = parsePath(tokens)
         }

@@ -1,4 +1,5 @@
-.vscode/
-.gradle/
-.idea/
-build/
+.vscode
+.gradle
+.idea
+build
+spidyr.yaml

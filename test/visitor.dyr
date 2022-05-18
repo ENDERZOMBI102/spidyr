@@ -1,0 +1,49 @@
+ns test.test3;
+
+in dev.remod.spidyr.processor.visitor.Visitor;
+in dev.remod.spidyr.types.ast.AstClass;
+in dev.remod.spidyr.types.ast.AstFunction;
+in dev.remod.spidyr.types.ast.AstRoot;
+in dev.remod.spidyr.types.ast.AstVariable;
+
+CountingVisitor : , Visitor {
+	count = 0 : int;
+
+	visitRoot( tree : AstRoot ) {
+		count = count + 1;
+		for ( imp in tree.imports ) {
+			visitImport( imp );
+		}
+		visitClass( tree.clazz );
+	}
+
+	visitImport( imp : String ) {
+		count = count + 1;
+	}
+
+	visitFunction( tree : AstFunction ) {
+		count = count + 1;
+		for ( def in tree.arguments ) {
+			visitVariable( def );
+		}
+	}
+
+	visitClass( tree : AstClass ) {
+		count = count + 1;
+		for ( def in tree.variables ) {
+			visitVariable( def );
+		}
+
+		for ( def in tree.functions ) {
+			visitFunction( def );
+		}
+	}
+
+	visitVariable( tree : AstVariable ) {
+		count = count + 1;
+	}
+
+	getAstMemberCount( ) {
+		ret count;
+	}
+}

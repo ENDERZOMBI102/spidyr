@@ -18,7 +18,8 @@ enum class Symbol(val value: String) {
     COLON(":"),
     OR("|"),
     DOT("."),
-    COMMA(",")
+    COMMA(","),
+    NOT_SYMBOL("")
     ;
 
     companion object {

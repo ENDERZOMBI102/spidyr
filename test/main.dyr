@@ -2,7 +2,7 @@ ns test.test2;
 
 Main {
     test = 1 : Long;
-    main(args : Array<String>) {
+    main( args : Array[String] ) {
         if (1 == test) {
             ret 1;
         }
